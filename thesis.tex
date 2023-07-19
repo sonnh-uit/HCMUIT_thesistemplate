@@ -1,0 +1,89 @@
+\documentclass[final]{thesis}
+\usepackage[utf8]{vietnam}
+\usepackage{placeins}
+\usepackage{amsfonts}
+\usepackage{textcomp}
+\usepackage{dblfloatfix}
+\usepackage{subfig}
+\usepackage{lineno}
+\usepackage{amssymb}
+\usepackage{tabularx,booktabs}
+\usepackage{longtable, lipsum}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{lscape}
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage[sorting=nyt]{biblatex}
+\usepackage{mathtools}
+\usepackage{lipsum}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{makecell}
+
+% Config reference
+\addbibresource{references.bib}
+
+% Setup hype link in thesis
+\hypersetup{urlcolor=blue,linkcolor=black,citecolor=black,colorlinks=true} 
+\DeclarePairedDelimiter\bra{\langle}{\rvert}
+\DeclarePairedDelimiter\ket{\lvert}{\rangle}
+\DeclarePairedDelimiterX\braket[2]{\langle}{\rangle}{#1 \delimsize\vert #2}
+
+
+% Config information thesis
+\upperuniname{ĐẠI HỌC QUỐC GIA THÀNH PHỐ HỒ CHÍ MINH}
+\uniname{TRƯỜNG ĐẠI HỌC CÔNG NGHỆ THÔNG TIN}
+\deptname{KHOA MẠNG MÁY TÍNH VÀ TRUYỀN THÔNG}
+\stumajor{KỸ SƯ NGÀNH AN TOÀN THÔNG TIN}
+\title{MÃ HÓA VÀ KIỂM SOÁT QUYỀN TRUY CẬP TRÊN HỆ QUẢN TRỊ CƠ SỞ DỮ LIỆU SQL}
+\titleen{ENCRYPT AND ACCESS CONTROL ON SQL DATABASE MANAGEMENT SYSTEM}
+\supervisor{GIẢNG VIÊN HƯỚNG DẪN}
+\supervisorname{TS. NGUYỄN NGỌC TỰ}
+\stuname{NGUYỄN HỒNG SƠN \\NGUYỄN HẢI LONG}
+\stunamewithid{NGUYỄN HỒNG SƠN - 17520988\\NGUYỄN HẢI LONG - 17520712}
+\reporttime{NĂM 2021}
+
+% Begin thesis
+\begin{document}
+
+\coverpage%
+\secondcoverpage%
+
+% % Begin above main thesis
+\frontmatter
+\include{chapters/front/decision.tex}
+\include{chapters/front/thanks.tex}
+\tableofcontents
+\clearpage
+\listoffigures
+\clearpage
+\listoftables
+\include{chapters/front/glossaries.tex}
+\clearpage
+
+% Begin main thesis, start page numbering
+\counterwithin{equation}{section}
+\counterwithin{table}{section}
+\counterwithin{figure}{section}
+\setcounter{secnumdepth}{3}
+\mainmatter
+\fancyhf{}
+\fancyfoot[C]{\thepage}
+\include{chapters/main/summary.tex}
+
+% Config page header
+\if @twoside
+  \fancyhead[EL,OR]{\bfseries\nouppercase\rightmark}
+\else
+  \fancyhead[R]{\bfseries\nouppercase\rightmark}
+\fi
+
+% Main chapter in thesis
+\include{chapters/main/chapter-1.tex}
+\include{chapters/main/chapter-2.tex}
+
+% Print references
+\printbibliography[heading=bibintoc, title = {Tài liệu tham khảo}]
+\end{document}
