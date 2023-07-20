@@ -8,6 +8,7 @@
     make
     ```
     Makefile sẽ cài đặt các gói cần thiết để build project.
+- Hoặc sinh viên có thể tải source code về rồi import vào [Overleaf](https://www.overleaf.com/). Template có sẵn trên `Overleaf` sẽ sớm có ở phiên bản sau.
 ## Guideline
 - Các phần trong project được thiết kế theo quy định của khóa luận vào năm 2021, các năm sau có thể thay đổi.
 - Cấu trúc thư mục project bao gồm
