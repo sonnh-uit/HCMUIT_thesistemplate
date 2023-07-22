@@ -71,36 +71,33 @@ This is guideline how you setting up your thesis. Follow the instruction bellow.
 5. Your project will automatically open.
 
 #### Building from source
-
+1. Clone project from github
+    ```
+    git clone https://github.com/sonnh-uit/HCMUIT_thesistemplate.git
+    ```
+2. Cd to project
+    ```
+    cd HCMUIT_thesis_template
+    ```
+3. Install require package
+    ```
+    make
+    ```
+4. Building example project
+    ```
+    make build
+    ```
 <!-- USAGE EXAMPLES -->
-## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<!-- ## Usage -->
 
 
 
 <!-- ROADMAP -->
-## Roadmap
-
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-    - [ ] Nested Feature
-
-See the [open issues](https://github.com/github_username/repo_name/issues) for a full list of proposed features (and known issues).
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
+<!-- ## Roadmap -->
 
 
 <!-- CONTRIBUTING -->
 ## Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
 If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
 Don't forget to give the project a star! Thanks again!
@@ -111,52 +108,37 @@ Don't forget to give the project a star! Thanks again!
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- LICENSE -->
 ## License
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
-
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
+Son Nguyen-Hong - [@facebook](https://www.facebook.com/sonnh.uit/) - 17520988@gm.uit.edu.vn
 
 <!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
+<!-- ## Acknowledgments
 
 * []()
 * []()
-* []()
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
+* []() -->
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/github_username/repo_name.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/sonnh-uit/HCMUIT_thesistemplate.svg?style=for-the-badge
 [contributors-url]: https://github.com/sonnh-uit/HCMUIT_thesistemplate/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/github_username/repo_name.svg?style=for-the-badge
+[forks-shield]: https://img.shields.io/github/forks/sonnh-uit/HCMUIT_thesistemplate.svg?style=for-the-badge
 [forks-url]: https://github.com/sonnh-uit/HCMUIT_thesistemplate/network/members
-[stars-shield]: https://img.shields.io/github/stars/github_username/repo_name.svg?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/sonnh-uit/HCMUIT_thesistemplate.svg?style=for-the-badge
 [stars-url]: https://github.com/sonnh-uit/HCMUIT_thesistemplate/stargazers
-[issues-shield]: https://img.shields.io/github/issues/github_username/repo_name.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/sonnh-uit/HCMUIT_thesistemplate.svg?style=for-the-badge
 [issues-url]: https://github.com/sonnh-uit/HCMUIT_thesistemplate/issues
-[license-shield]: https://img.shields.io/github/license/github_username/repo_name.svg?style=for-the-badge
+[license-shield]: https://img.shields.io/github/license/sonnh-uit/HCMUIT_thesistemplate.svg?style=for-the-badge
 [license-url]: https://github.com/sonnh-uit/HCMUIT_thesistemplate/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/sonnh-uit/
@@ -177,33 +159,3 @@ Project Link: [https://github.com/github_username/repo_name](https://github.com/
 [Bootstrap-url]: https://getbootstrap.com
 [JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
 [JQuery-url]: https://jquery.com  -->
-
-# HCMUIT_thesistemplate
-
-## Require:
-- Khóa luận được build bằng pdflatex, đã test thành công trên Ubuntu 2022. Để sử dụng các phiên bản hệ điều hành khác, sinh viên cần tìm hiểu và cài đặt đúng các gói của texlive.
-- Đối với phiên bản Ubuntu 2022, sinh viên cài đặt thư viện bằng cách
-    ```
-    apt get install make
-    make
-    ```
-    Makefile sẽ cài đặt các gói cần thiết để build project.
-- Hoặc sinh viên có thể tải source code về rồi import vào [Overleaf](https://www.overleaf.com/). Template có sẵn trên `Overleaf` sẽ sớm có ở phiên bản sau.
-## Guideline
-- Các phần trong project được thiết kế theo quy định của khóa luận vào năm 2021, các năm sau có thể thay đổi.
-- Cấu trúc thư mục project bao gồm
-  - chapters: là nơi chứa toàn bộ các phần trong khóa luận. Bao gồm hai phần chính là `front` và `main`
-    - `front`: Những thành phần không đánh số chính, bao gồm `Quyết định thành lập hội đồng chấm khóa luận`, `Lời cảm ơn` và `Danh mục từ viết tắt`
-    - `main`: Các phần còn lại, bao gồm `Tóm tắt khóa luận` và các chương khác.
-    - Những phần khác được yêu cầu trong khóa luận như `Danh sách hình vẽ`, `Danh sách bảng`... được tự động tạo, quy định ở file `thesis.tex`
-  - graphics: Chứa hình ảnh chèn vào trong khóa luận, được chia thành các chương khác nhau
-  - `Makefile`: Chứa require package phải cài để build khóa luận
-  - `references.bib`: Chứa tài liệu tham khảo theo định dạng BibTex. Sinh viên có thể lấy định dạng này ở trên trích dẫn của Google Scholar
-  - `thesis.cls`: Thư viện được thiết kế để build khóa luận, không khuyến khích thay đổi.
-  - `thesis.tex`: File chính của toàn khóa luận, quy định chi tiết các thông tin cũng như sắp xếp chương mục trong toàn khóa luận.
-  - `thesis.pdf`: Khóa luận ví dụ đã build
-- Để build khóa luận, sinh viên thực hiện
-    ```
-    make build
-    ```
-**Các thắc mắc khác, sinh viên có thể hỏi lại https://github.com/sonnh-uit/HCMUIT_thesistemplate/issues. Mình sẽ cố gắng trả lời sớm nhất có thể.**
