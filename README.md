@@ -21,7 +21,7 @@
     <!-- <br /> -->
     A small project to writing UIT thesis correctly.
     <br />
-    <a href="https://github.com/sonnh-uit/HCMUIT_thesistemplate/imgs/demo">View Demo</a>
+    <a href="https://github.com/sonnh-uit/HCMUIT_thesistemplate/tree/master/imgs/demo">View Demo</a>
     ·
     <a href="https://github.com/sonnh-uit/HCMUIT_thesistemplate/issues">Report Bug</a>
     ·
@@ -85,11 +85,11 @@ This is guideline how you setting up your thesis. Follow the instruction bellow.
 <!-- USAGE EXAMPLES -->
 <!-- ## Usage -->
 
+## DEMO
+The gifs bellow display step by step to use this project.
+### Overleaf
 
-
-<!-- ROADMAP -->
-<!-- ## Roadmap -->
-
+![overleaf-demo](imgs/demo/OverLeaf-Demo.gif)
 
 <!-- CONTRIBUTING -->
 ## Contributing
