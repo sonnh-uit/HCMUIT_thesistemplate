@@ -4,7 +4,8 @@
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
-
+[![Download][download-shield]][download-url]
+<!-- [![Github All Releases](https://img.shields.io/github/downloads/sonnh-uit/HCMUIT_thesistemplate/total.svg?style=for-the-badge)](https://github.com/sonnh-uit/HCMUIT_thesistemplate) -->
 
 
 <!-- PROJECT LOGO -->
@@ -65,6 +66,9 @@ This is guideline how you setting up your thesis. Follow the instruction bellow.
 4. On the pop up, select a zip file you already download before.
 5. Your project will automatically open.
 
+or 
+
+- [Get template in Overleaf](https://www.overleaf.com/latex/templates/hcmuit-thesistemplate/ghqpckjqdxfz) to your project.
 #### Building from source
 1. Clone project from github
     ```
@@ -138,6 +142,8 @@ Son Nguyen-Hong - [@facebook](https://www.facebook.com/sonnh.uit/) - 17520988@gm
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/sonnh-uit/
 
+[download-shield]: https://img.shields.io/github/downloads/sonnh-uit/HCMUIT_thesistemplate/total.svg?style=for-the-badge
+[download-url]: https://github.com/sonnh-uit/HCMUIT_thesistemplate
 
 [Latex]: https://img.shields.io/badge/Latex-000000?style=for-the-badge&logo=latex&logoColor=white
 [Latex-url]: https://www.latex-project.org/
