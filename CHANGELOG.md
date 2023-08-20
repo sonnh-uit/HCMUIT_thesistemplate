@@ -7,4 +7,8 @@
 
 ## v1.0.1
 ### Added
-- New version README
+- Fix bug numbering table, figure and equation in `thesis.tex`
+
+## v1.1.0
+### Added
+- Docker environment for build.
