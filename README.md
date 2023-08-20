@@ -70,6 +70,7 @@ or
 
 - [Get template in Overleaf](https://www.overleaf.com/latex/templates/hcmuit-thesistemplate/ghqpckjqdxfz) to your project.
 #### Building from source
+##### Buid from local machine Ubuntu
 1. Clone project from github
     ```
     git clone https://github.com/sonnh-uit/HCMUIT_thesistemplate.git
@@ -86,6 +87,14 @@ or
     ```
     make build
     ```
+##### Buid from docker
+
+To easy, I update `Dockerfile` and `docker-compose` to build this project on version 1.1.0. So, you just [INSTALL DOCKER](https://docs.docker.com/engine/install/) and build this thesis with
+
+```
+sudo docker-compose up
+```
+
 <!-- USAGE EXAMPLES -->
 <!-- ## Usage -->
 
