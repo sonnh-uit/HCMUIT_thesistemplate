@@ -55,7 +55,7 @@ This is guideline how you setting up your thesis. Follow the instruction bellow.
   ```
   sudo apt install make
   ```
-  
+- If you use docker, [INSTALL DOCKER](https://docs.docker.com/engine/install/) in their website.
 
 ### Installation
 
@@ -88,19 +88,25 @@ or
     make build
     ```
 ##### Buid from docker
-
-To easy, I update `Dockerfile` and `docker-compose` to build this project on version 1.1.0. So, you just [INSTALL DOCKER](https://docs.docker.com/engine/install/) and build this thesis with
-
-```
-sudo docker-compose up
-```
+1. Clone project from github
+    ```
+    git clone https://github.com/sonnh-uit/HCMUIT_thesistemplate.git
+    ```
+2. Cd to project
+    ```
+    cd HCMUIT_thesis_template
+    ```
+3. Build with docker-compose
+    ```
+    sudo docker-compose up
+    ```
 
 <!-- USAGE EXAMPLES -->
 <!-- ## Usage -->
 
 ## DEMO
-The gifs bellow display step by step to use this project.
-### Overleaf
+The gifs bellow display step by step to use this project in Overleaf
+<!-- ### Overleaf -->
 
 ![overleaf-demo](imgs/demo/OverLeaf-Demo.gif)
 
