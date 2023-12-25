@@ -105,11 +105,13 @@ or
 <!-- ## Usage -->
 
 ## DEMO
-The gifs bellow display step by step to use this project in Overleaf
+- The gifs bellow display step by step to use this project in Overleaf
 <!-- ### Overleaf -->
 
 ![overleaf-demo](imgs/demo/OverLeaf-Demo.gif)
 
+- To change your name and your thesis title. Change the information in `thesis.tex` (from line 35 to line 50). 
+- To add more references, after adding file to the references folder, add more line in `thesis.tex` 's config reference session (from line 25 to line 27). 
 <!-- CONTRIBUTING -->
 ## Contributing
 
