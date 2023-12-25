@@ -21,7 +21,7 @@
 \newcommand{\uniname}[1]{\renewcommand{\@uniname}{#1}}
 \newcommand{\@deptname}{}
 \newcommand{\deptname}[1]{\renewcommand{\@deptname}{#1}}
-\newcommand{\@reporttype}{KHÓA LUẬN TỐT NGHIỆP}
+\newcommand{\@reporttype}{}
 \newcommand{\reporttype}[1]{\renewcommand{\@reporttype}{#1}}
 \newcommand{\@stumajor}{}
 \newcommand{\stumajor}[1]{\renewcommand{\@stumajor}{#1}}
@@ -36,13 +36,13 @@
 \newcommand{\supervisorname}[1]{\renewcommand{\@supervisorname}{#1}}
 \newcommand{\@secretary}{Secretary}
 \newcommand{\secretary}[1]{\renewcommand{\@secretary}{#1}}
-\newcommand{\@instruction}{GIẢNG VIÊN HƯỚNG DẪN}
+\newcommand{\@instruction}{}
 \newcommand{\instruction}[1]{\renewcommand{\@instruction}{#1}}
 \newcommand{\@stuname}{}
 \newcommand{\stuname}[1]{\renewcommand{\@stuname}{#1}}
 \newcommand{\@stunamewithid}{}
 \newcommand{\stunamewithid}[1]{\renewcommand{\@stunamewithid}{#1}}
-\newcommand{\@reportplace}{TP. HỒ CHÍ MINH}
+\newcommand{\@reportplace}{}
 \newcommand{\reportplace}[1]{\renewcommand{\@reportplace}{#1}}
 \newcommand{\@reporttime}{}
 \newcommand{\reporttime}[1]{\renewcommand{\@reporttime}{#1}}
