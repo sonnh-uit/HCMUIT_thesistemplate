@@ -31,6 +31,8 @@
 \DeclarePairedDelimiter\ket{\lvert}{\rangle}
 \DeclarePairedDelimiterX\braket[2]{\langle}{\rangle}{#1 \delimsize\vert #2}
 
+% Config figure path
+\graphicspath{ {./graphics/figures} }
 
 % Config information thesis
 % =========== Thay đổi thông tin tại phần này ===========
@@ -38,13 +40,13 @@
 \uniname{TRƯỜNG ĐẠI HỌC CÔNG NGHỆ THÔNG TIN}
 \deptname{KHOA MẠNG MÁY TÍNH VÀ TRUYỀN THÔNG}
 \stumajor{KỸ SƯ NGÀNH AN TOÀN THÔNG TIN}
-\title{MÃ HÓA VÀ KIỂM SOÁT QUYỀN TRUY CẬP TRÊN HỆ QUẢN TRỊ CƠ SỞ DỮ LIỆU SQL}
-\titleen{ENCRYPT AND ACCESS CONTROL ON SQL DATABASE MANAGEMENT SYSTEM}
+\title{SỬ DỤNG LATEX TRONG SOẠN THẢO KHÓA LUẬN TỐT NGHIỆP}
+\titleen{USING LATEX IN WRITING GRADUATION THESIS}
 \supervisor{GIẢNG VIÊN HƯỚNG DẪN}
-\supervisorname{TS. NGUYỄN NGỌC TỰ}
-\stuname{NGUYỄN HỒNG SƠN \\NGUYỄN HẢI LONG}
-\stunamewithid{NGUYỄN HỒNG SƠN - 17520988\\NGUYỄN HẢI LONG - 17520712}
-\reporttime{NĂM 2021}
+\supervisorname{TS. GOOGLE}
+\stuname{NGUYỄN HỒNG SƠN }
+\stunamewithid{NGUYỄN HỒNG SƠN - 17520988}
+\reporttime{NĂM 2024}
 \reporttype{KHÓA LUẬN TỐT NGHIỆP}
 \instruction{GIẢNG VIÊN HƯỚNG DẪN}
 \reportplace{TP. HỒ CHÍ MINH}
@@ -66,6 +68,7 @@
 \clearpage
 \listoftables
 \include{chapters/front/glossaries.tex}
+\include{chapters/front/translate.tex}
 \clearpage
 
 % Begin main thesis, start page numbering
@@ -88,6 +91,11 @@
 % Main chapter in thesis
 \include{chapters/main/chapter-1.tex}
 \include{chapters/main/chapter-2.tex}
+
+
+% Appendix chapter in thesis
+\appendix
+\include{chapters/back/apendixA.tex}
 
 % Print references
 \printbibliography[heading=bibintoc, title = {Tài liệu tham khảo}]
