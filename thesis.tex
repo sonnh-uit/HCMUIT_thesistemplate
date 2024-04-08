@@ -24,19 +24,19 @@
 \usepackage{subcaption}
 \usepackage{adjustbox}
 \usepackage[vietnamese,english]{babel}
-% Config reference
 
+% Config reference source file
 \addbibresource{references/chapter2.bib}
 
 % Config figure path
 \graphicspath{ {./graphics} }
+
+% Config for math in quantum computin
 \DeclarePairedDelimiter\bra{\langle}{\rvert}
 \DeclarePairedDelimiter\ket{\lvert}{\rangle}
 \DeclarePairedDelimiterX\braket[2]{\langle}{\rangle}{#1 \delimsize\vert#2}
 
-
-% Config program listings 
-
+% Config listings 
 \lstset{
   frame=tb,
   aboveskip=3mm,
@@ -51,7 +51,6 @@
   stringstyle=\color{mauve},
   breaklines=true,
   postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
-  % breakatwhitespace=true,
   tabsize=3
 }
 
@@ -100,11 +99,11 @@
 \counterwithin{figure}{chapter}
 \setcounter{secnumdepth}{3}
 \mainmatter
+
+% Config page header
 \fancyhf{}
 \fancyfoot[C]{\thepage}
 \include{chapters/main/summary.tex}
-
-% Config page header
 \if @twoside
   \fancyhead[EL,OR]{\bfseries\nouppercase\rightmark}
 \else
@@ -114,6 +113,7 @@
 % Main chapter in thesis
 \include{chapters/main/chapter1.tex}
 \include{chapters/main/chapter2.tex}
+\include{chapters/main/chapter3.tex}
 
 
 % Appendix chapter in thesis
