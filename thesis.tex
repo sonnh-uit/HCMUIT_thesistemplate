@@ -25,15 +25,12 @@
 % Config reference
 \addbibresource{references/chapter-1.bib}
 \addbibresource{references/chapter-2.bib}
-% Setup hype link in thesis
-\hypersetup{urlcolor=blue,linkcolor=black,citecolor=black,colorlinks=true} 
-\DeclarePairedDelimiter\bra{\langle}{\rvert}
-\DeclarePairedDelimiter\ket{\lvert}{\rangle}
-\DeclarePairedDelimiterX\braket[2]{\langle}{\rangle}{#1 \delimsize\vert #2}
 
 % Config figure path
-\graphicspath{ {./graphics/figures} }
-
+\graphicspath{ {./graphics} }
+\DeclarePairedDelimiter\bra{\langle}{\rvert}
+\DeclarePairedDelimiter\ket{\lvert}{\rangle}
+\DeclarePairedDelimiterX\braket[2]{\langle}{\rangle}{#1 \delimsize\vert#2}
 % Config information thesis
 % =========== Thay đổi thông tin tại phần này ===========
 \upperuniname{ĐẠI HỌC QUỐC GIA THÀNH PHỐ HỒ CHÍ MINH}
@@ -90,7 +87,7 @@
 
 % Main chapter in thesis
 \include{chapters/main/chapter-1.tex}
-\include{chapters/main/chapter-2.tex}
+% \include{chapters/main/chapter-2.tex}
 
 
 % Appendix chapter in thesis

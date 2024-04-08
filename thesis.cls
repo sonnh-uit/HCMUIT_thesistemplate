@@ -1,20 +1,23 @@
+% ========= Config paper and font =============
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{hcmuit-thesis}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{memoir}}
 \ProcessOptions\relax
-\LoadClass[12pt,a4paper]{memoir}
+\LoadClass[13pt,a4paper]{memoir}
 
-% Require package
+% ========== Require package to setup paper, link, language
 \RequirePackage{anyfontsize,mathptmx}
 \RequirePackage[T5]{fontenc}
 \RequirePackage{geometry,graphicx,indentfirst,setspace}
 \RequirePackage{tikz}
 \RequirePackage[center]{caption}
 \RequirePackage{fancyhdr,hyperref}
-\hypersetup{urlcolor=blue,linkcolor=black,citecolor=black,colorlinks=true} 
 \RequirePackage[vietnamese,english]{babel}
 
-% Set command to provide param 
+\usetikzlibrary{calc}
+\hypersetup{urlcolor=blue,linkcolor=black,citecolor=black,colorlinks=true} 
+
+% ===========Set command to provide param ===========
 \newcommand{\@upperuniname}{}
 \newcommand{\upperuniname}[1]{\renewcommand{\@upperuniname}{#1}}
 \newcommand{\@uniname}{}
@@ -25,7 +28,6 @@
 \newcommand{\reporttype}[1]{\renewcommand{\@reporttype}{#1}}
 \newcommand{\@stumajor}{}
 \newcommand{\stumajor}[1]{\renewcommand{\@stumajor}{#1}}
-\renewcommand{\@title}{}
 \newcommand{\@titleen}{}
 \newcommand{\titleen}[1]{\renewcommand{\@titleen}{#1}}
 \newcommand{\@defcouncil}{Council}
@@ -47,13 +49,15 @@
 \newcommand{\@reporttime}{}
 \newcommand{\reporttime}[1]{\renewcommand{\@reporttime}{#1}}
 
-
+% =========== Overwrite exist command to custom project ============
+\renewcommand{\@title}{}
 \renewcommand{\headrulewidth}{0.3pt}
 \renewcommand{\footrulewidth}{0pt}
 \renewcommand{\large}{\fontsize{15}{15}\selectfont}
 \renewcommand{\Large}{\fontsize{20}{20}\selectfont}
 \renewcommand{\arraystretch}{1.2}
-\usetikzlibrary{calc}
+
+% ==========Setup paper margin and footer==========
 \geometry{
   paper=a4paper,
   left=3cm,
@@ -74,6 +78,7 @@
 \setlength{\cftfigurenumwidth}{3em}
 \AtBeginDocument{\renewcommand*\bibname{References}}
 
+% ==========Setup corlor for link and url==========
 \hypersetup{
   colorlinks=true,
   linkcolor=black,
@@ -81,6 +86,7 @@
   urlcolor=blue
 }
 
+% ========== Start create cover page, fancy is package to draw line, paper..==========
 \pagestyle{fancy}
 \fancyhf{}
 
@@ -173,14 +179,14 @@
   \pagestyle{fancy}
 }
 
-\providecommand{\phantomsection}{}
-\newenvironment{preface}[1]{
-  \vspace*{\stretch{2}}
-  {\noindent \bfseries \Huge \#1}
-  \begin{center}
-    \thispagestyle{plain}
-    \phantomsection \addcontentsline{toc}{chapter}{\#1}
-  \end{center}
-}{
-  \vspace*{\stretch{5}}
-}
+% \providecommand{\phantomsection}{}
+% \newenvironment{preface}[1]{
+%   \vspace*{\stretch{2}}
+%   {\noindent \bfseries \Huge \#1}
+%   \begin{center}
+%     \thispagestyle{plain}
+%     \phantomsection \addcontentsline{toc}{chapter}{\#1}
+%   \end{center}
+% }{
+%   \vspace*{\stretch{5}}
+% }
