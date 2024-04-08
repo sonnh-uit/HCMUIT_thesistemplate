@@ -1,6 +1,6 @@
 % ========= Config paper and font =============
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{hcmuit-thesis}
+\ProvidesClass{hcmuitthesis}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{memoir}}
 \ProcessOptions\relax
 \LoadClass[14pt,a4paper]{memoir}
@@ -60,6 +60,7 @@
 \renewcommand{\Large}{\fontsize{20}{20}\selectfont}
 \renewcommand{\arraystretch}{1.2}
 \renewcommand*{\lstlistingname}{Đoạn mã}
+\renewcommand\lstlistlistingname{Danh sách đoạn mã}
 % ==========Setup paper margin and footer==========
 \geometry{
   paper=a4paper,
