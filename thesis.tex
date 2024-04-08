@@ -1,4 +1,4 @@
-\documentclass[final]{thesis}
+\documentclass[final]{hcmuitthesis}
 \usepackage[utf8]{vietnam}
 \usepackage{placeins}
 \usepackage{amsfonts}
@@ -23,7 +23,7 @@
 \usepackage{listings}
 \usepackage{subcaption}
 \usepackage{adjustbox}
-
+\usepackage[vietnamese,english]{babel}
 % Config reference
 
 \addbibresource{references/chapter2.bib}
@@ -38,12 +38,11 @@
 % Config program listings 
 
 \lstset{
-  % language=Bash,
   frame=tb,
   aboveskip=3mm,
   belowskip=3mm,
   showstringspaces=false,
-  columns=flexible,
+  columns=fullflexible,
   basicstyle={\small\ttfamily},
   numbers=left,
   numberstyle=\tiny\color{gray},
@@ -51,7 +50,8 @@
   commentstyle=\color{dkgreen},
   stringstyle=\color{mauve},
   breaklines=true,
-  breakatwhitespace=true,
+  postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
+  % breakatwhitespace=true,
   tabsize=3
 }
 
@@ -88,6 +88,8 @@
 \listoffigures
 \clearpage
 \listoftables
+\clearpage
+\lstlistoflistings
 \include{chapters/front/glossaries.tex}
 \include{chapters/front/translate.tex}
 \clearpage

@@ -11,3 +11,5 @@ install_latex:
 build:
 	@echo "Build thesis"
 	pdflatex thesis.tex
+	biber thesis
+	pdflatex thesis.tex
