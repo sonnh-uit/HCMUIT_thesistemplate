@@ -3,8 +3,7 @@
 \ProvidesClass{hcmuit-thesis}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{memoir}}
 \ProcessOptions\relax
-\LoadClass[13pt,a4paper]{memoir}
-
+\LoadClass[14pt,a4paper]{memoir}
 % ========== Require package to setup paper, link, language
 \RequirePackage{anyfontsize,mathptmx}
 \RequirePackage[T5]{fontenc}
@@ -13,6 +12,10 @@
 \RequirePackage[center]{caption}
 \RequirePackage{fancyhdr,hyperref}
 \RequirePackage[vietnamese,english]{babel}
+\RequirePackage{listings}
+\RequirePackage{graphicx}
+% \RequirePackage{caption}
+% \RequirePackage{subcaption}
 
 \usetikzlibrary{calc}
 \hypersetup{urlcolor=blue,linkcolor=black,citecolor=black,colorlinks=true} 
@@ -56,7 +59,7 @@
 \renewcommand{\large}{\fontsize{15}{15}\selectfont}
 \renewcommand{\Large}{\fontsize{20}{20}\selectfont}
 \renewcommand{\arraystretch}{1.2}
-
+\renewcommand*{\lstlistingname}{Đoạn mã}
 % ==========Setup paper margin and footer==========
 \geometry{
   paper=a4paper,

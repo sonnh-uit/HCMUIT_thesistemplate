@@ -4,7 +4,6 @@
 \usepackage{amsfonts}
 \usepackage{textcomp}
 \usepackage{dblfloatfix}
-\usepackage{subfig}
 \usepackage{lineno}
 \usepackage{amssymb}
 \usepackage{tabularx,booktabs}
@@ -21,16 +20,41 @@
 \usepackage{fancyhdr}
 \usepackage{titlesec}
 \usepackage{makecell}
+\usepackage{listings}
+\usepackage{subcaption}
+\usepackage{adjustbox}
 
 % Config reference
-\addbibresource{references/chapter-1.bib}
-\addbibresource{references/chapter-2.bib}
+
+\addbibresource{references/chapter2.bib}
 
 % Config figure path
 \graphicspath{ {./graphics} }
 \DeclarePairedDelimiter\bra{\langle}{\rvert}
 \DeclarePairedDelimiter\ket{\lvert}{\rangle}
 \DeclarePairedDelimiterX\braket[2]{\langle}{\rangle}{#1 \delimsize\vert#2}
+
+
+% Config program listings 
+
+\lstset{
+  % language=Bash,
+  frame=tb,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
 % Config information thesis
 % =========== Thay đổi thông tin tại phần này ===========
 \upperuniname{ĐẠI HỌC QUỐC GIA THÀNH PHỐ HỒ CHÍ MINH}
@@ -55,7 +79,7 @@
 \coverpage%
 \secondcoverpage%
 
-% % Begin above main thesis
+% Begin above main thesis
 \frontmatter
 \include{chapters/front/decision.tex}
 \include{chapters/front/thanks.tex}
@@ -86,8 +110,8 @@
 \fi
 
 % Main chapter in thesis
-\include{chapters/main/chapter-1.tex}
-% \include{chapters/main/chapter-2.tex}
+\include{chapters/main/chapter1.tex}
+\include{chapters/main/chapter2.tex}
 
 
 % Appendix chapter in thesis
