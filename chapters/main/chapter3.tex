@@ -3,7 +3,9 @@
 
 Chương này trình bày một số kỹ thuật chèn bảng với các cột, dòng merge nhiều ô. Các cách format bảng cơ bản không trình bày. Trong quá trình sử dụng, có thể cập nhật các chỉ dẫn rõ ràng cho từng câu lệnh nghĩa là gì trong một bảng.
 
-Bảng \ref{tab:student_statistics} mô tả một bảng mẫu bao gồm đầy đủ các yếu tố như cột nhiều hàng, hàng nhiều cột. Các kỹ thuật sử dụng trong bảng này được mô tả trong đoạn mã \ref{lst:insert-table}.
+\section{Chèn bảng có nhiều hàng, cột}
+
+Bảng \ref{tab:student_statistics} mô tả một bảng mẫu bao gồm đầy đủ các yếu tố như cột nhiều hàng, hàng nhiều cột. Các kỹ thuật sử dụng trong bảng này cơ bản đã bao gồm hết các thao tác thông thường của việc tạo bảng.
 
 
 
@@ -32,31 +34,78 @@ Bảng \ref{tab:student_statistics} mô tả một bảng mẫu bao gồm đầy
   \end{tabular}
 \end{table}
 
+\section{Chèn bảng có nhiều trang}
 
-\begin{lstlisting}[language={[LaTeX]TeX}, caption={Chèn một bảng vào báo cáo}, label={lst:insert-table}]
-\begin{table}[ht]
-  \centering
-  \caption{Comparison of statistics among students in different faculties}
-  \label{tab:student_statistics}
-  \begin{tabular}{|C{.2\textwidth} | C{.2\textwidth} | C{.6\textwidth}|}
-    \hline
-    \multicolumn{2}{|c|}{\textbf{Faculty}} & \multirow{2}{*}{\textbf{Attributes}} \\
-    \cline{1-2}
-    \textbf{Faculty A} & \textbf{Faculty B} & \\
-    \hline
-    \multirow{3}{*}{Physics} & Average Score & Students in Faculty A have an average score of 85, while those in Faculty B have an average score of 78. \\
-    \cline{2-3}
-    & Physical Education & Faculty A emphasizes physical education with mandatory sports classes, resulting in higher fitness levels compared to Faculty B. \\
-    \cline{2-3}
-    & Book Reading & Students in Faculty A are encouraged to read books related to physics, which has positively impacted their understanding of the subject. \\
-    \hline
-    \multirow{3}{*}{\shortstack[C]{Computer \\ Science}} & Average Score & Faculty A's students have an average score of 90, whereas Faculty B's students have an average score of 82. \\
-    \cline{2-3}
-    & Culture Activity & Faculty A organizes regular cultural activities, enhancing students' cultural awareness and social skills. \\
-    \cline{2-3}
-    & Internship Opportunities & Faculty A provides more internship opportunities, leading to better practical knowledge among students. \\
-    \hline
-  \end{tabular}
-\end{table}
-\end{lstlisting}
+Trong một số trường hợp cần chèn bảng với quá nhiều dòng, số liệu của chúng sang trang khác. Ví dụ như trường hợp ta cần mô tả bảng số liệu của quá trình training qua từng vòng, thì sử dụng \textit{longtable} là sự lựa chọn thông minh. Bảng \ref{tab:chap3-longtable-example} mô tả một bảng như vậy.
 
+\begin{longtable}[htbp]{|c|| c|| c|| c|| c|| c|| c|} 
+  \caption{Mô tả bảng dài với nhiều số liệu}
+  \label{tab:chap3-longtable-example} \\
+  \hline
+  \hline
+  {Data} & {$\beta_{UP}$} & {$ \beta_{LOW}$} & {$ \beta_{TEL}$} & {$R_{UP}$} & {$R_{LOW}$}  & {$R_{TEL}$} \\
+  \hline
+  \endfirsthead
+  \hline
+  {Data} & {$\beta_{UP}$} & {$ \beta_{LOW}$} & {$ \beta_{TEL}$} & {$R_{UP}$} & {$R_{LOW}$}  & {$R_{TEL}$} \\
+  \hline
+  \endhead
+  \hline \multicolumn{7}{|r|}{{Continued on next page}} \\ \hline
+  \endfoot
+  \hline
+  \multicolumn{7}{|c|}{{End of Table}} \\ \hline
+  \endlastfoot
+
+  200604 & 0.0437 & 0.0087 & -0.0963 & 0.17 & 0.05 & -0.46 \\
+  200605 & 0.0317 & 0.0478 & -0.1136 & 0.20 & 0.40 & -0.61 \\
+  200606 & -0.0699 & -0.0418 & -0.0420 & -0.21 & -0.16 & -0.005 \\
+  200607 & -0.0783 & -0.0483 & -0.0868 & -0.24 & -0.19 & -0.25 \\
+  200608 & -0.0551 & -0.0734 & -0.1932 & -0.27 & -0.41 & -0.63 \\
+  201410 & -0.0609 & -0.0849 & -0.3131 & -0.06 & -0.06 & -0.38 \\
+  201411 & -0.0279 & -0.0849 & -0.2353 & -0.03 & -0.09 & -0.29 \\
+  201412 & 0.0884 & -0.0252 & -0.1411 & 0.08 & -0.02 & -0.12 \\ 
+  200604 & 0.0437 & 0.0087 & -0.0963 & 0.17 & 0.05 & -0.46 \\
+  200605 & 0.0317 & 0.0478 & -0.1136 & 0.20 & 0.40 & -0.61 \\
+  200606 & -0.0699 & -0.0418 & -0.0420 & -0.21 & -0.16 & -0.005 \\
+  200607 & -0.0783 & -0.0483 & -0.0868 & -0.24 & -0.19 & -0.25 \\
+  200608 & -0.0551 & -0.0734 & -0.1932 & -0.27 & -0.41 & -0.63 \\
+  201410 & -0.0609 & -0.0849 & -0.3131 & -0.06 & -0.06 & -0.38 \\
+  201411 & -0.0279 & -0.0849 & -0.2353 & -0.03 & -0.09 & -0.29 \\
+  201412 & 0.0884 & -0.0252 & -0.1411 & 0.08 & -0.02 & -0.12 \\ 
+  200604 & 0.0437 & 0.0087 & -0.0963 & 0.17 & 0.05 & -0.46 \\
+  200605 & 0.0317 & 0.0478 & -0.1136 & 0.20 & 0.40 & -0.61 \\
+  200606 & -0.0699 & -0.0418 & -0.0420 & -0.21 & -0.16 & -0.005 \\
+  200607 & -0.0783 & -0.0483 & -0.0868 & -0.24 & -0.19 & -0.25 \\
+  200608 & -0.0551 & -0.0734 & -0.1932 & -0.27 & -0.41 & -0.63 \\
+  201410 & -0.0609 & -0.0849 & -0.3131 & -0.06 & -0.06 & -0.38 \\
+  201411 & -0.0279 & -0.0849 & -0.2353 & -0.03 & -0.09 & -0.29 \\
+  201412 & 0.0884 & -0.0252 & -0.1411 & 0.08 & -0.02 & -0.12 \\ 
+  200604 & 0.0437 & 0.0087 & -0.0963 & 0.17 & 0.05 & -0.46 \\
+  200605 & 0.0317 & 0.0478 & -0.1136 & 0.20 & 0.40 & -0.61 \\
+  200606 & -0.0699 & -0.0418 & -0.0420 & -0.21 & -0.16 & -0.005 \\
+  200607 & -0.0783 & -0.0483 & -0.0868 & -0.24 & -0.19 & -0.25 \\
+  200608 & -0.0551 & -0.0734 & -0.1932 & -0.27 & -0.41 & -0.63 \\
+  201410 & -0.0609 & -0.0849 & -0.3131 & -0.06 & -0.06 & -0.38 \\
+  201411 & -0.0279 & -0.0849 & -0.2353 & -0.03 & -0.09 & -0.29 \\
+  201412 & 0.0884 & -0.0252 & -0.1411 & 0.08 & -0.02 & -0.12 \\ 
+  200604 & 0.0437 & 0.0087 & -0.0963 & 0.17 & 0.05 & -0.46 \\
+  200605 & 0.0317 & 0.0478 & -0.1136 & 0.20 & 0.40 & -0.61 \\
+  200606 & -0.0699 & -0.0418 & -0.0420 & -0.21 & -0.16 & -0.005 \\
+\end{longtable}
+
+Ngoài ra, trong một vài trường hợp có thể sử dụng bảng ngang. Nhưng xét thấy ít khi sử dụng vậy nên tác giả không thêm vào.
+% \begin{sidewaystable}
+%   \centering
+%   \caption{Comparison}
+%   \begin{tabular}{l*{6}{c}r}
+%   \hline
+%   Names  & A & B & C & D \\
+%   \hline
+%   \hline
+%   Jobs   & A & B & C & D \\
+%   \hline
+%   Types   & A & B & C & D \\
+%   \hline
+%   \end{tabular}    
+  
+%   \end{sidewaystable}
