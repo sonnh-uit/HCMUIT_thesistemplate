@@ -9,4 +9,4 @@ RUN apt-get update && apt-get upgrade -y && \
 
 WORKDIR /app
 COPY . .
-ENTRYPOINT ["/app", "-r", "sh", "-c", "pdflatex thesis.tex && biber thesis && pdflatex thesis.tex"]
+ENTRYPOINT ["bash", "-c", "pdflatex thesis.tex && biber thesis && pdflatex thesis.tex"]
