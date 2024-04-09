@@ -14,7 +14,7 @@
 \RequirePackage[vietnamese,english]{babel}
 \RequirePackage{listings}
 \RequirePackage{graphicx}
-% \RequirePackage{catchfile}
+% \RequirePackage{caption}
 % \RequirePackage{subcaption}
 
 \usetikzlibrary{calc}
@@ -51,7 +51,6 @@
 \newcommand{\reportplace}[1]{\renewcommand{\@reportplace}{#1}}
 \newcommand{\@reporttime}{}
 \newcommand{\reporttime}[1]{\renewcommand{\@reporttime}{#1}}
-
 
 % =========== Overwrite exist command to custom project ============
 \renewcommand{\@title}{}
