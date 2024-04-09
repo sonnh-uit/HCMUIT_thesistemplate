@@ -24,6 +24,13 @@
 \usepackage{subcaption}
 \usepackage{adjustbox}
 \usepackage[vietnamese,english]{babel}
+\usepackage{multirow}
+\usepackage{longtable}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
 
 % Config reference source file
 \addbibresource{references/chapter2.bib}
@@ -63,17 +70,20 @@
 \title{SỬ DỤNG LATEX TRONG SOẠN THẢO KHÓA LUẬN TỐT NGHIỆP}
 \titleen{USING LATEX IN WRITING GRADUATION THESIS}
 \supervisor{GIẢNG VIÊN HƯỚNG DẪN}
-\supervisorname{TS. GOOGLE}
+\supervisorname{PGS. TS. GOOGLE \\ ThS. CHATGPT}
 \stuname{NGUYỄN HỒNG SƠN }
 \stunamewithid{NGUYỄN HỒNG SƠN - 17520988}
 \reporttime{NĂM 2024}
 \reporttype{KHÓA LUẬN TỐT NGHIỆP}
 \instruction{GIẢNG VIÊN HƯỚNG DẪN}
 \reportplace{TP. HỒ CHÍ MINH}
+
 % =========== Hết phần thay đổi thông tin ===========
 
 % Begin thesis
 \begin{document}
+
+
 
 \coverpage%
 \secondcoverpage%

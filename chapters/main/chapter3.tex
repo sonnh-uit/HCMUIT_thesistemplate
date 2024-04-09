@@ -3,3 +3,29 @@
 
 Chương này trình bày một số kỹ thuật chèn bảng với các cột, dòng merge nhiều ô. Các cách format bảng cơ bản không trình bày. Trong quá trình sử dụng, có thể cập nhật các chỉ dẫn rõ ràng cho từng câu lệnh nghĩa là gì trong một bảng.
 
+
+
+  \begin{table}[ht]
+    \centering
+    \caption{Comparison of statistics among students in different faculties}
+    \label{tab:student_statistics}
+    \begin{tabular}{|p{.2\textwidth} | C{.2\textwidth} | C{.6\textwidth}|}
+      \hline
+      \multicolumn{2}{|c|}{\textbf{Faculty}} & \multirow{2}{*}{\textbf{Attributes}} \\
+      \cline{1-2}
+      \textbf{Faculty A} & \textbf{Faculty B} & \\
+      \hline
+      \multirow{3}{*}{Physics} & Average Score & Students in Faculty A have an average score of 85, while those in Faculty B have an average score of 78. \\
+      \cline{2-3}
+      & Physical Education & Faculty A emphasizes physical education with mandatory sports classes, resulting in higher fitness levels compared to Faculty B. \\
+      \cline{2-3}
+      & Book Reading & Students in Faculty A are encouraged to read books related to physics, which has positively impacted their understanding of the subject. \\
+      \hline
+      \multirow{3}{*}{\shortstack[l]{Computer \\ Science}} & Average Score & Faculty A's students have an average score of 90, whereas Faculty B's students have an average score of 82. \\
+      \cline{2-3}
+      & Culture Activity & Faculty A organizes regular cultural activities, enhancing students' cultural awareness and social skills. \\
+      \cline{2-3}
+      & Internship Opportunities & Faculty A provides more internship opportunities, leading to better practical knowledge among students. \\
+      \hline
+    \end{tabular}
+  \end{table}
