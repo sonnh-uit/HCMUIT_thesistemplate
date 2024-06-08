@@ -1,0 +1,95 @@
+\documentclass[a4paper, oneside]{project}
+\usepackage[utf8]{vietnam}
+\usepackage{placeins}
+\usepackage{amsfonts}
+\usepackage{textcomp}
+\usepackage{dblfloatfix}
+\usepackage{subfig}
+\usepackage{lineno}
+\usepackage{amssymb}
+\usepackage{tabularx,booktabs}
+\usepackage{longtable, lipsum}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{lscape}
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage[sorting=nyt]{biblatex}
+\usepackage{mathtools}
+\usepackage{lipsum}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{makecell}
+\usepackage{blindtext}
+\usepackage{subfiles} % Chèn các file nhỏ, giúp chia các chapter ra nhiều file hơn
+
+% Config reference
+\addbibresource{references.bib}
+
+% Setup hype link in thesis
+\hypersetup{urlcolor=blue,linkcolor=black,citecolor=black,colorlinks=true} 
+\DeclarePairedDelimiter\bra{\langle}{\rvert}
+\DeclarePairedDelimiter\ket{\lvert}{\rangle}
+\DeclarePairedDelimiterX\braket[2]{\langle}{\rangle}{#1 \delimsize\vert #2}
+
+
+% Config information thesis
+\upperuniname{ĐẠI HỌC QUỐC GIA THÀNH PHỐ HỒ CHÍ MINH}
+\uniname{TRƯỜNG ĐẠI HỌC CÔNG NGHỆ THÔNG TIN}
+\deptname{KHOA MẠNG MÁY TÍNH VÀ TRUYỀN THÔNG}
+\stumajor{KỸ SƯ NGÀNH AN TOÀN THÔNG TIN}
+\title{TÊN ĐỀ TÀI ĐỒ ÁN CHUYÊN NGÀNH BẰNG TIẾNG VIỆT}
+\titleen{TITLE FOR THE SPECIALIZED PROJECT IN ENGLISH}
+\supervisor{GIẢNG VIÊN HƯỚNG DẪN}
+\supervisorname{HỌC VỊ VÀ HỌ TÊN GVHD}
+\stunamewithid{HỌ TÊN SINH VIÊN 1 - MSSV SV1\\HỌ TÊN SINH VIÊN 2 - MSSV SV2}
+\reporttime{NĂM 2024}
+
+% Begin thesis
+\begin{document}
+
+\coverpage
+
+% % Begin above main thesis
+\frontmatter
+\subfile{chapters/front/thanks}
+\clearpage
+\tableofcontents
+\clearpage
+\listoffigures
+\clearpage
+\listoftables
+\clearpage
+\subfile{chapters/front/glossaries}
+
+
+% Begin main thesis, start page numbering
+\counterwithin{equation}{section}
+\counterwithin{table}{section}
+\counterwithin{figure}{section}
+\setcounter{secnumdepth}{3}
+\mainmatter
+\fancyhf{}
+\fancyfoot[C]{\thepage}
+\subfile{chapters/main/summary}
+\subfile{chapters/main/intro}
+
+
+
+% Config page header
+\if @twoside
+  \fancyhead[EL,OR]{\bfseries\nouppercase\rightmark}
+\else
+  \fancyhead[R]{\bfseries\nouppercase\rightmark}
+\fi
+
+% Main chapter in thesis
+\subfile{chapters/main/chapter-1}
+\subfile{chapters/main/chapter-2}
+
+% Conclusion
+\subfile{chapters/main/conclusion}
+% Print references
+\printbibliography[heading=bibintoc, title = {Tài liệu tham khảo}]
+\end{document}
