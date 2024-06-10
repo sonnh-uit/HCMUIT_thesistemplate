@@ -27,14 +27,14 @@
 % Config reference
 \addbibresource{ref.bib}
 
-% Setup hype link in thesis
+% Setup hyper link
 \hypersetup{urlcolor=blue,linkcolor=black,citecolor=black,colorlinks=true} 
 \DeclarePairedDelimiter\bra{\langle}{\rvert}
 \DeclarePairedDelimiter\ket{\lvert}{\rangle}
 \DeclarePairedDelimiterX\braket[2]{\langle}{\rangle}{#1 \delimsize\vert #2}
 
 
-% Config information thesis
+% Config information
 \upperuniname{ĐẠI HỌC QUỐC GIA THÀNH PHỐ HỒ CHÍ MINH}
 \uniname{TRƯỜNG ĐẠI HỌC CÔNG NGHỆ THÔNG TIN}
 \deptname{KHOA MẠNG MÁY TÍNH VÀ TRUYỀN THÔNG}
@@ -46,12 +46,10 @@
 \stunamewithid{HỌ TÊN SINH VIÊN 1 - MSSV SV1\\HỌ TÊN SINH VIÊN 2 - MSSV SV2}
 \reporttime{NĂM 2024}
 
-% Begin thesis
 \begin{document}
 
 \coverpage
 
-% % Begin above main thesis
 \frontmatter
 \subfile{chapters/front/thanks}
 \clearpage
@@ -64,7 +62,6 @@
 \subfile{chapters/front/glossaries}
 
 
-% Begin main thesis, start page numbering
 \counterwithin{equation}{section}
 \counterwithin{table}{section}
 \counterwithin{figure}{section}
@@ -84,7 +81,7 @@
   \fancyhead[R]{\bfseries\nouppercase\rightmark}
 \fi
 
-% Main chapter in thesis
+% Main chapters
 \subfile{chapters/main/chapter-1}
 \subfile{chapters/main/chapter-2}
 

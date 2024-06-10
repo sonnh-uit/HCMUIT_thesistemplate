@@ -84,7 +84,6 @@
 \pagestyle{fancy}
 \fancyhf{}
 
-%Second Cover page
 \def\coverpage{
   \pagestyle{empty}
   \large\bfseries
