@@ -7,9 +7,12 @@ install_latex:
 	sudo apt install texlive-latex-extra -y
 	sudo apt-get install texlive-lang-all -y
 	sudo apt install texlive-bibtex-extra -y
+	sudo apt install texlive-full -y
 	sudo apt install biber -y
 build:
 	@echo "Build thesis"
-	pdflatex thesis.tex
+	pdflatex thesis
 	biber thesis
-	pdflatex thesis.tex
+	makeglossaries thesis
+	pdflatex thesis
+	pdflatex thesis
