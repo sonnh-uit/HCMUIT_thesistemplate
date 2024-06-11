@@ -12,13 +12,77 @@
 \RequirePackage[center]{caption}
 \RequirePackage{fancyhdr,hyperref}
 \RequirePackage[vietnamese,english]{babel}
+\RequirePackage[utf8]{vietnam}
 \RequirePackage{listings}
 \RequirePackage{graphicx}
-% \RequirePackage{caption}
-% \RequirePackage{subcaption}
-
+\RequirePackage{glossaries}
+\RequirePackage[fontsize=13pt]{scrextend}
+\RequirePackage{placeins}
+\RequirePackage{amsfonts}
+\RequirePackage{textcomp}
+\RequirePackage{dblfloatfix}
+\RequirePackage{lineno}
+\RequirePackage{amssymb}
+\RequirePackage{tabularx,booktabs}
+\RequirePackage{longtable, lipsum}
+\RequirePackage{amsmath}
+\RequirePackage{mathtools}
+\RequirePackage{graphicx}
+\RequirePackage{lscape}
+\RequirePackage{caption}
+\RequirePackage{hyperref}
+\RequirePackage[sorting=nyt]{biblatex}
+\RequirePackage{mathtools}
+\RequirePackage{lipsum}
+\RequirePackage{fancyhdr}
+\RequirePackage{titlesec}
+\RequirePackage{makecell}
+\RequirePackage{listings}
+\RequirePackage{subcaption}
+\RequirePackage{adjustbox}
+\RequirePackage{multirow}
+\RequirePackage{longtable}
+\RequirePackage{rotating}
+\RequirePackage[utf8]{inputenc}
 \usetikzlibrary{calc}
+
+% Define color and column type
 \hypersetup{urlcolor=blue,linkcolor=black,citecolor=black,colorlinks=true} 
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
+% Config figure path
+\graphicspath{ {./graphics} }
+
+% Define the desired distance from the top of the page
+\newlength{\chaptertopmargin}
+\setlength{\chaptertopmargin}{2cm} % Adjust the value as needed
+\titlespacing*{\chapter}{0pt}{\chaptertopmargin}{20pt} % Adjust the second value for space before chapter titles
+
+
+% Config for math in quantum computin
+\DeclarePairedDelimiter\bra{\langle}{\rvert}
+\DeclarePairedDelimiter\ket{\lvert}{\rangle}
+\DeclarePairedDelimiterX\braket[2]{\langle}{\rangle}{#1 \delimsize\vert#2}
+
+% Config listings 
+\lstset{
+  frame=tb,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=fullflexible,
+  basicstyle={\small\ttfamily},
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
+  tabsize=4
+}
 
 % ===========Set command to provide param ===========
 \newcommand{\@upperuniname}{}
@@ -49,8 +113,7 @@
 \newcommand{\stunamewithid}[1]{\renewcommand{\@stunamewithid}{#1}}
 \newcommand{\@reportplace}{}
 \newcommand{\reportplace}[1]{\renewcommand{\@reportplace}{#1}}
-\newcommand{\@reporttime}{}
-\newcommand{\reporttime}[1]{\renewcommand{\@reporttime}{#1}}
+
 
 % =========== Overwrite exist command to custom project ============
 \renewcommand{\@title}{}
@@ -61,6 +124,13 @@
 \renewcommand{\arraystretch}{1.2}
 \renewcommand*{\lstlistingname}{Đoạn mã}
 \renewcommand\lstlistlistingname{Danh sách đoạn mã}
+
+\renewcommand*{\glossarysection}[2][]{%
+  \chapter*{Danh sách các từ viết tắt}
+  \addcontentsline{toc}{chapter}{Danh sách các từ viết tắt}
+}
+
+
 % ==========Setup paper margin and footer==========
 \geometry{
   paper=a4paper,
@@ -130,7 +200,7 @@
   \vfill
   \mdseries
   \begin{center}
-    \uppercase{\@reportplace, \@reporttime}
+    \uppercase{\@reportplace \the\year{}}
   \end{center}
   \normalsize
   \cleardoublepage
@@ -176,21 +246,26 @@
   \vfill
   \mdseries
   \begin{center}
-    \uppercase{\@reportplace, \@reporttime}
+    \uppercase{\@reportplace \the\year{}}
   \end{center}
   \normalsize
   \cleardoublepage
   \pagestyle{fancy}
 }
 
-% \providecommand{\phantomsection}{}
-% \newenvironment{preface}[1]{
-%   \vspace*{\stretch{2}}
-%   {\noindent \bfseries \Huge \#1}
-%   \begin{center}
-%     \thispagestyle{plain}
-%     \phantomsection \addcontentsline{toc}{chapter}{\#1}
-%   \end{center}
-% }{
-%   \vspace*{\stretch{5}}
-% }
+\def\mainthesis {
+  \counterwithin{equation}{chapter}
+  \counterwithin{table}{chapter}
+  \counterwithin{figure}{chapter}
+  \setcounter{secnumdepth}{3}
+  \mainmatter
+  % Config page header
+  \fancyhf{}
+  \fancyfoot[C]{\thepage}
+  \include{chapters/main/summary.tex}
+  \if @twoside
+    \fancyhead[EL,OR]{\bfseries\nouppercase\rightmark}
+  \else
+    \fancyhead[R]{\bfseries\nouppercase\rightmark}
+  \fi
+}

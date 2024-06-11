@@ -1,86 +1,9 @@
 \documentclass[final]{hcmuitthesis}
-\usepackage[utf8]{vietnam}
-\usepackage{placeins}
-\usepackage{amsfonts}
-\usepackage{textcomp}
-\usepackage{dblfloatfix}
-\usepackage{lineno}
-\usepackage{amssymb}
-\usepackage{tabularx,booktabs}
-\usepackage{longtable, lipsum}
-\usepackage{amsmath}
-\usepackage{mathtools}
-\usepackage{graphicx}
-\usepackage{lscape}
-\usepackage{caption}
-\usepackage{hyperref}
-\usepackage[sorting=nyt]{biblatex}
-\usepackage{mathtools}
-\usepackage{lipsum}
-\usepackage{fancyhdr}
-\usepackage{titlesec}
-\usepackage{makecell}
-\usepackage{listings}
-\usepackage{subcaption}
-\usepackage{adjustbox}
-\usepackage[vietnamese,english]{babel}
-\usepackage{multirow}
-\usepackage{longtable}
-\usepackage{rotating}
-
-% Define color and column type
-\definecolor{dkgreen}{rgb}{0,0.6,0}
-\definecolor{gray}{rgb}{0.5,0.5,0.5}
-\definecolor{mauve}{rgb}{0.58,0,0.82}
-\newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
-
 % Config reference source file
 \addbibresource{references/chapter2.bib}
 
-% Config figure path
-\graphicspath{ {./graphics} }
 
-% Config for math in quantum computin
-\DeclarePairedDelimiter\bra{\langle}{\rvert}
-\DeclarePairedDelimiter\ket{\lvert}{\rangle}
-\DeclarePairedDelimiterX\braket[2]{\langle}{\rangle}{#1 \delimsize\vert#2}
-
-% Config listings 
-\lstset{
-  frame=tb,
-  aboveskip=3mm,
-  belowskip=3mm,
-  showstringspaces=false,
-  columns=fullflexible,
-  basicstyle={\small\ttfamily},
-  numbers=left,
-  numberstyle=\tiny\color{gray},
-  keywordstyle=\color{blue},
-  commentstyle=\color{dkgreen},
-  stringstyle=\color{mauve},
-  breaklines=true,
-  postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
-  tabsize=3
-}
-% Config listings 
-\lstset{
-  frame=tb,
-  aboveskip=3mm,
-  belowskip=3mm,
-  showstringspaces=false,
-  columns=fullflexible,
-  basicstyle={\small\ttfamily},
-  numbers=left,
-  numberstyle=\tiny\color{gray},
-  keywordstyle=\color{blue},
-  commentstyle=\color{dkgreen},
-  stringstyle=\color{mauve},
-  breaklines=true,
-  postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space},
-  tabsize=3
-}
-
-% Config information thesis
+% Define metadata
 % =========== Thay đổi thông tin tại phần này ===========
 \upperuniname{ĐẠI HỌC QUỐC GIA THÀNH PHỐ HỒ CHÍ MINH}
 \uniname{TRƯỜNG ĐẠI HỌC CÔNG NGHỆ THÔNG TIN}
@@ -92,17 +15,16 @@
 \supervisorname{PGS. TS. GOOGLE \\ ThS. CHATGPT}
 \stuname{NGUYỄN HỒNG SƠN }
 \stunamewithid{NGUYỄN HỒNG SƠN - 17520988}
-\reporttime{NĂM 2024}
 \reporttype{KHÓA LUẬN TỐT NGHIỆP}
 \instruction{GIẢNG VIÊN HƯỚNG DẪN}
-\reportplace{TP. HỒ CHÍ MINH}
+\reportplace{TP. HỒ CHÍ MINH, NĂM }
 
 % =========== Hết phần thay đổi thông tin ===========
 
+\input{chapters/front/glossaries.tex}
+\makeglossaries
 % Begin thesis
 \begin{document}
-
-
 
 \coverpage%
 \secondcoverpage%
@@ -118,33 +40,18 @@
 \listoftables
 \clearpage
 \lstlistoflistings
-\include{chapters/front/glossaries.tex}
-\include{chapters/front/translate.tex}
 \clearpage
+\printglossaries
 
-% Begin main thesis, start page numbering
-\counterwithin{equation}{chapter}
-\counterwithin{table}{chapter}
-\counterwithin{figure}{chapter}
-\setcounter{secnumdepth}{3}
-\mainmatter
-
-% Config page header
-\fancyhf{}
-\fancyfoot[C]{\thepage}
-\include{chapters/main/summary.tex}
-\if @twoside
-  \fancyhead[EL,OR]{\bfseries\nouppercase\rightmark}
-\else
-  \fancyhead[R]{\bfseries\nouppercase\rightmark}
-\fi
+% \include{chapters/front/translate.tex}
+\clearpage
+\mainthesis
 
 % Main chapter in thesis
 \include{chapters/main/chapter1.tex}
 \include{chapters/main/chapter2.tex}
 \include{chapters/main/chapter3.tex}
 \include{chapters/main/chapter4.tex}
-
 
 % Appendix chapter in thesis
 \appendix
