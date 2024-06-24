@@ -44,6 +44,7 @@
 \RequirePackage{longtable}
 \RequirePackage{rotating}
 \RequirePackage[utf8]{inputenc}
+\RequirePackage{background}
 \usetikzlibrary{calc}
 
 % Define color and column type
@@ -95,6 +96,8 @@
 \newcommand{\reporttype}[1]{\renewcommand{\@reporttype}{#1}}
 \newcommand{\@stumajor}{}
 \newcommand{\stumajor}[1]{\renewcommand{\@stumajor}{#1}}
+\newcommand{\@majorcode}{}
+\newcommand{\majorcode}[1]{\renewcommand{\@majorcode}{#1}}
 \newcommand{\@titleen}{}
 \newcommand{\titleen}[1]{\renewcommand{\@titleen}{#1}}
 \newcommand{\@defcouncil}{Council}
@@ -140,6 +143,7 @@
   includeheadfoot=true,
   headheight=30pt
 }
+\backgroundsetup{contents={}}
 \OnehalfSpacing
 \raggedbottom
 
@@ -184,60 +188,20 @@
   \begin{center}
     \uppercase{\@upperuniname} \\
     \uppercase{\@uniname} \\
-    \uppercase{\@deptname} \\
+    \includegraphics[scale=0.3]{imgs/star.png}
+    \vfill
+    \includegraphics[scale=0.4]{imgs/UIT-logo.png}\\
     \vfill
     \uppercase{\@stuname}
     \vfill
-    \uppercase{\@reporttype}
-    \vfill
     {\Large{\parbox[c]{0.8\linewidth}{\centering\@title}}} \\
     \vfill
     {\Large{\parbox[c]{0.8\linewidth}{\centering\@titleen}}}
     \vfill
-    \uppercase {\@stumajor}
-  \end{center}
-  \vfill
-  \vfill
-  \mdseries
-  \begin{center}
-    \uppercase{\@reportplace \the\year{}}
-  \end{center}
-  \normalsize
-  \cleardoublepage
-  \pagestyle{fancy}
-}
-
-%Second Cover page
-\def\secondcoverpage{
-  \pagestyle{empty}
-  \large\bfseries
-  \begin{tikzpicture}[remember picture,overlay]
-    \draw[line width=3pt](
-    $(current page.north west) + (3.0cm,-2.0cm)$
-    ) rectangle (
-    $(current page.south east) + (-2.0cm,2.0cm)$
-    );
-    \draw[line width=1pt](
-    $(current page.north west) + (2.9cm,-1.9cm)$
-    ) rectangle (
-    $(current page.south east) + (-1.9cm,1.9cm)$
-    );
-  \end{tikzpicture}
-  \vspace*{-3\baselineskip}
-  \begin{center}
-    \uppercase{\@upperuniname} \\
-    \uppercase{\@uniname} \\
-    \uppercase{\@deptname} \\
+    \uppercase{\@reporttype}\\
+    \uppercase {\@stumajor} \\
     \vfill
-    \uppercase{\@stunamewithid}
-    \vfill
-    \uppercase{\@reporttype}
-    \vfill
-    {\Large{\parbox[c]{0.8\linewidth}{\centering\@title}}} \\
-    \vfill
-    {\Large{\parbox[c]{0.8\linewidth}{\centering\@titleen}}}
-    \vfill
-    \uppercase {\@stumajor}
+    Mã số: \uppercase{\@majorcode} \\
     \vfill
     \uppercase{\@supervisor} \\
     \uppercase{\@supervisorname}
@@ -253,7 +217,9 @@
   \pagestyle{fancy}
 }
 
+
 \def\mainthesis {
+  
   \counterwithin{equation}{chapter}
   \counterwithin{table}{chapter}
   \counterwithin{figure}{chapter}
@@ -268,4 +234,10 @@
   \else
     \fancyhead[R]{\bfseries\nouppercase\rightmark}
   \fi
+  \backgroundsetup{
+    contents=\includegraphics{imgs/UIT-logo.png},
+    scale=1.5,
+    opacity=0.1,
+    angle=0  % Ensure the background image is not rotated
+}
 }
