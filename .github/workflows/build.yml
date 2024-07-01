@@ -8,10 +8,14 @@ jobs:
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v4
-      - name: Compile LaTeX document
-        uses: xu-cheng/latex-action@v3
-        with:
-          root_file: thesis.tex
+      - name: Install latex
+        run: make install_latex
+      - name: Build thesis
+        run: make build
+      # - name: Compile LaTeX document
+      #   uses: xu-cheng/latex-action@v3
+      #   with:
+      #     root_file: thesis.tex
       - name: Upload PDF file
         id: artifact-upload-step
         uses: actions/upload-artifact@v4
