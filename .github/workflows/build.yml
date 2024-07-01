@@ -13,8 +13,12 @@ jobs:
         with:
           root_file: thesis.tex
       - name: Upload PDF file
+        id: artifact-upload-step
         uses: actions/upload-artifact@v4
         with:
           overwrite: true
-          name: PDF
+          retention-days: 7
+          name: final-thesis
           path: thesis.pdf
+      - name: Print url to down load file
+        run:  echo 'Download url is ${{ steps.artifact-upload-step.outputs.artifact-url }}'
