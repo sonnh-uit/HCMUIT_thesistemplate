@@ -4,9 +4,5 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 # Update the system and install LaTeX dependencies
 RUN apt-get update && apt-get upgrade -y && \
-    apt-get install -y texlive-latex-extra texlive-lang-all \
-                       texlive-bibtex-extra biber
-
-WORKDIR /app
-COPY . .
-ENTRYPOINT ["bash", "-c", "pdflatex thesis.tex && biber thesis && pdflatex thesis.tex"]
+    apt-get install -y texlive-full texlive-latex-extra texlive-lang-all texlive-publishers texlive-bibtex-extra biber 
+                       
