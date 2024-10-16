@@ -1,10 +1,7 @@
 version: '3'
 services:
-  thesis-build:
-    build:
-      context: .
-      dockerfile: Dockerfile
+  my-thesis:
+    container_name: my-thesis-template
+    image: quay.io/sonnh-uit/hcmuit-thesis
     volumes:
-      - .:/app
-    working_dir: /app
-    # command: ["echo", "thesis.tex", "|", "/app", "-r", "pdflatex thesis.tex && biber thesis && pdflatex thesis.tex"]
+      - ./pdf:/app/result

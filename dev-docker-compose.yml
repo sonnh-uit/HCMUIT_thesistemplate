@@ -1,0 +1,9 @@
+version: '3'
+services:
+  thesis-build:
+    container_name: dev-thesis
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./pdf:/app/result
