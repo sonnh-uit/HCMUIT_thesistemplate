@@ -101,8 +101,7 @@ or
     sudo docker-compose up
     ```
 
-<!-- USAGE EXAMPLES -->
-<!-- ## Usage -->
+Container will create `pdf` folder and your thesis file on there.
 
 ## DEMO
 - The gifs bellow display step by step to use this project in Overleaf
