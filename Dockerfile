@@ -7,7 +7,7 @@ RUN apt-get update -y && \
 
 WORKDIR /app
 ADD . /app
-RUN mkdir -p /app/result
-VOLUME /app/result
+RUN mkdir -p /result
+VOLUME /result
 RUN chmod +x /app/build.sh
 CMD ["/app/build.sh" ]
