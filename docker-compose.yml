@@ -1,6 +1,6 @@
 services:
   my-thesis:
-    container_name: dev-thesis-template
-    image: quay.io/sonnh-uit/hcmuit-thesis
+    container_name: thesis-template
+    image: quay.io/sonnh-uit/hcmuit-thesis:latest
     volumes:
       - .:/app
