@@ -1,0 +1,7 @@
+services:
+  my-thesis:
+    container_name: thesis-slide
+    image: quay.io/sonnh-uit/hcmuit-thesis
+    volumes:
+      - .:/app
+    entrypoint: ["tail", "-f", "/dev/null"]

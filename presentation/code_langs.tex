@@ -1,0 +1,164 @@
+%----------------------------------------------------------------------------------------
+%	PACOTES E CONFIGURAÇÕES PARA CÓDIGO
+%----------------------------------------------------------------------------------------
+% Pacotes necessários para formatação de código
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{xcolor}
+
+% Cores para syntax highlighting (VSCode Light Theme)
+\definecolor{vscBackground}{RGB}{255,255,255}    % Fundo branco
+\definecolor{vscKeyword}{RGB}{175,0,219}         % Roxo para palavras-chave
+\definecolor{vscString}{RGB}{163,21,21}          % Vermelho para strings
+\definecolor{vscComment}{RGB}{0,128,0}           % Verde para comentários
+\definecolor{vscFunction}{RGB}{121,94,38}        % Marrom para funções
+\definecolor{vscNumber}{RGB}{9,134,88}           % Verde escuro para números
+\definecolor{vscOperator}{RGB}{175,0,219}        % Roxo para operadores
+\definecolor{vscText}{RGB}{0,0,0}                % Texto preto
+\definecolor{vscLineNr}{RGB}{128,128,128}        % Cinza para números de linha
+
+% Configuração geral do listings para UTF-8
+\lstset{
+    inputencoding=utf8,
+    extendedchars=true,
+    literate=%
+        {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+        {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+        {à}{{\`a}}1 {è}{{\`e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1 {ù}{{\`u}}1
+        {À}{{\`A}}1 {È}{{\'E}}1 {Ì}{{\`I}}1 {Ò}{{\`O}}1 {Ù}{{\`U}}1
+        {ã}{{\~a}}1 {ẽ}{{\~e}}1 {ĩ}{{\~i}}1 {õ}{{\~o}}1 {ũ}{{\~u}}1
+        {Ã}{{\~A}}1 {Ẽ}{{\~E}}1 {Ĩ}{{\~I}}1 {Õ}{{\~O}}1 {Ũ}{{\~U}}1
+        {â}{{\^a}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1 {û}{{\^u}}1
+        {Â}{{\^A}}1 {Ê}{{\^E}}1 {Î}{{\^I}}1 {Ô}{{\^O}}1 {Û}{{\^U}}1
+        {ç}{{\c c}}1 {Ç}{{\c C}}1
+        {º}{{\textordmasculine}}1
+        {ª}{{\textordfeminine}}1
+}
+
+% Configurações base comum para todas as linguagens
+\lstdefinestyle{baseStyle}{
+    backgroundcolor=\color{vscBackground},
+    basicstyle=\ttfamily\small\color{vscText},
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=4,
+    frame=single,
+    framerule=0.8pt,
+    rulecolor=\color{gray!20},
+    numberstyle=\tiny\color{vscLineNr},
+    keywordstyle=\color{vscKeyword},
+    commentstyle=\color{vscComment}\itshape,
+    stringstyle=\color{vscString},
+    emphstyle=\color{vscFunction},
+    columns=flexible,
+    basewidth={0.5em,0.45em},
+    inputencoding=utf8,
+    extendedchars=true
+}
+
+%----------------------------------------------------------------------------------------
+% Python
+%----------------------------------------------------------------------------------------
+\lstdefinestyle{pythonStyle}{
+    style=baseStyle,
+    language=Python,
+    morekeywords={self,None,True,False,import,from,as,def,class,return,yield,
+                  for,while,if,else,elif,try,except,finally,with,lambda,
+                  async,await,break,continue,global,nonlocal,pass,raise},
+    morekeywords=[2]{print,len,range,type,int,str,float,list,dict,set,
+                     tuple,max,min,sum,sorted,enumerate,zip,map,filter,
+                     any,all,abs,round,pow,divmod},
+    keywordstyle=[2]\color{vscFunction},
+    sensitive=true
+}
+
+\lstnewenvironment{python}[1][]{\lstset{style=pythonStyle, #1}}{}
+\newcommand{\pyinline}[1]{\lstinline[style=pythonStyle]!#1!}
+\newcommand{\inputpython}[2][]{\lstinputlisting[style=pythonStyle,#1]{#2}}
+
+%----------------------------------------------------------------------------------------
+% C Language
+%----------------------------------------------------------------------------------------
+\lstdefinestyle{cStyle}{
+    style=baseStyle,
+    language=C,
+    morekeywords={include,define,void,int,char,float,double,long,unsigned,
+                  struct,union,enum,typedef,const,static,extern,register,
+                  auto,volatile,sizeof,return,if,else,for,while,do,switch,
+                  case,break,continue,default,goto},
+    morekeywords=[2]{printf,scanf,malloc,free,calloc,realloc,fopen,fclose,
+                     fprintf,fscanf,strcpy,strlen,strcat},
+    keywordstyle=[2]\color{vscFunction},
+    sensitive=true
+}
+
+\lstnewenvironment{clang}[1][]{\lstset{style=cStyle, #1}}{}
+\newcommand{\clinline}[1]{\lstinline[style=cStyle]!#1!}
+\newcommand{\inputclang}[2][]{\lstinputlisting[style=cStyle,#1]{#2}}
+
+%----------------------------------------------------------------------------------------
+% C++
+%----------------------------------------------------------------------------------------
+\lstdefinestyle{cppStyle}{
+    style=baseStyle,
+    language=C++,
+    morekeywords={class,private,protected,public,template,typename,namespace,
+                  using,new,delete,this,friend,virtual,override,final,explicit,
+                  mutable,constexpr,nullptr,noexcept,static_cast,dynamic_cast,
+                  const_cast},
+    morekeywords=[2]{cout,cin,endl,vector,string,map,set,queue,stack,pair,
+                     begin,end,push_back,pop_back,emplace_back,size,empty},
+    keywordstyle=[2]\color{vscFunction},
+    sensitive=true
+}
+
+\lstnewenvironment{cpp}[1][]{\lstset{style=cppStyle, #1}}{}
+\newcommand{\cppinline}[1]{\lstinline[style=cppStyle]!#1!}
+\newcommand{\inputcpp}[2][]{\lstinputlisting[style=cppStyle,#1]{#2}}
+
+%----------------------------------------------------------------------------------------
+% R Language
+%----------------------------------------------------------------------------------------
+\lstdefinestyle{rStyle}{
+    style=baseStyle,
+    language=R,
+    morekeywords={if,else,repeat,while,function,for,in,next,break,TRUE,FALSE,
+                  NULL,Inf,NaN,NA,NA_integer_,NA_real_,NA_complex_,NA_character_},
+    morekeywords=[2]{library,require,attach,detach,source,setwd,options,
+                     data.frame,read.csv,write.csv,list,matrix,array},
+    keywordstyle=[2]\color{vscFunction},
+    sensitive=true
+}
+
+\lstnewenvironment{rlang}[1][]{\lstset{style=rStyle, #1}}{}
+\newcommand{\rlinline}[1]{\lstinline[style=rStyle]!#1!}
+\newcommand{\inputrlang}[2][]{\lstinputlisting[style=rStyle,#1]{#2}}
+
+%----------------------------------------------------------------------------------------
+% Java
+%----------------------------------------------------------------------------------------
+\lstdefinestyle{javaStyle}{
+    style=baseStyle,
+    language=Java,
+    morekeywords={abstract,assert,boolean,break,byte,case,catch,char,class,
+                  const,continue,default,do,double,else,enum,extends,final,
+                  finally,float,for,if,implements,import,instanceof,int,
+                  interface,long,native,new,package,private,protected,public,
+                  return,short,static,strictfp,super,switch,synchronized,this,
+                  throw,throws,transient,try,void,volatile,while},
+    morekeywords=[2]{String,System,out,println,printStackTrace,ArrayList,
+                     HashMap,Arrays,List,Map,Set,Exception,RuntimeException},
+    keywordstyle=[2]\color{vscFunction},
+    sensitive=true
+}
+
+\lstnewenvironment{java}[1][]{\lstset{style=javaStyle, #1}}{}
+\newcommand{\javainline}[1]{\lstinline[style=javaStyle]!#1!}
+\newcommand{\inputjava}[2][]{\lstinputlisting[style=javaStyle,#1]{#2}}

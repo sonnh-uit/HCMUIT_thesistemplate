@@ -1,0 +1,49 @@
+
+\section{Equation and Code}
+
+\begin{frame}{Equation}
+    Navier-Stokes Equations Expanded Form (3D):
+    \footnotesize
+        \begin{align*}
+            \rho\left(\frac{\partial u}{\partial t} + u\frac{\partial u}{\partial x} + v\frac{\partial u}{\partial y} + w\frac{\partial u}{\partial z}\right) &= -\frac{\partial p}{\partial x} + \mu\left(\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} + \frac{\partial^2 u}{\partial z^2}\right) + f_x \\[0.3cm]
+            \rho\left(\frac{\partial v}{\partial t} + u\frac{\partial v}{\partial x} + v\frac{\partial v}{\partial y} + w\frac{\partial v}{\partial z}\right) &= -\frac{\partial p}{\partial y} + \mu\left(\frac{\partial^2 v}{\partial x^2} + \frac{\partial^2 v}{\partial y^2} + \frac{\partial^2 v}{\partial z^2}\right) + f_y \\[0.3cm]
+            \rho\left(\frac{\partial w}{\partial t} + u\frac{\partial w}{\partial x} + v\frac{\partial w}{\partial y} + w\frac{\partial w}{\partial z}\right) &= -\frac{\partial p}{\partial z} + \mu\left(\frac{\partial^2 w}{\partial x^2} + \frac{\partial^2 w}{\partial y^2} + \frac{\partial^2 w}{\partial z^2}\right) + f_z
+        \end{align*}
+        
+    where $\mathbf{v} = (u,v,w)$ is the velocity field, $p$ is the pressure, $\rho$ is the density, $\mu$ is the dynamic viscosity, and $\mathbf{f}$ represents external forces.
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}[fragile]
+    \frametitle{Python}
+    
+    \begin{python}
+def calcular_dobro(x):
+    """Retorna o dobro do número"""
+    return 2 * x
+
+# Testando a função
+numero = 5
+resultado = calcular_dobro(numero)
+print(f"O dobro de {numero} é {resultado}")
+    \end{python}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}[fragile]
+    \frametitle{Java}
+    
+    \begin{java}
+public class Exemplo {
+    public static void main(String[] args) {
+        int numero = 5;
+        int dobro = 2 * numero;
+        
+        System.out.println("O dobro de " + numero +
+                         " eh " + dobro);
+    }
+}
+    \end{java}
+\end{frame}
+%------------------------------------------------
