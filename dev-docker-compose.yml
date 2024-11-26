@@ -1,9 +1,6 @@
-version: '3'
 services:
-  dev-thesis:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    # image: quay.io/sonnh-uit/hcmuit-thesis:dev
+  my-thesis:
+    container_name: dev-thesis-template
+    image: quay.io/sonnh-uit/hcmuit-thesis:dev
     volumes:
-      - ./pdf:/result
+      - .:/app
