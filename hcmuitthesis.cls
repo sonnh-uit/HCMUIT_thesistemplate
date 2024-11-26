@@ -24,7 +24,7 @@
 \RequirePackage{lineno}
 \RequirePackage{amssymb}
 \RequirePackage{tabularx,booktabs}
-\RequirePackage{longtable, lipsum}
+\RequirePackage{longtable}
 \RequirePackage{amsmath}
 \RequirePackage{mathtools}
 \RequirePackage{graphicx}
@@ -33,7 +33,7 @@
 \RequirePackage{hyperref}
 \RequirePackage[sorting=nyt]{biblatex}
 \RequirePackage{mathtools}
-\RequirePackage{lipsum}
+\RequirePackage{lipsum,blindtext}
 \RequirePackage{fancyhdr}
 \RequirePackage{titlesec}
 \RequirePackage{makecell}
