@@ -7,4 +7,4 @@ RUN apt-get update && apt-get upgrade -y && \
                        texlive-bibtex-extra biber
 WORKDIR /app
 ADD . /app
-ENTRYPOINT ["sh", "-c", "pdflatex -interaction=batchmode thesis.tex && biber thesis && pdflatex -interaction=batchmode thesis.tex > /dev/null"]
+ENTRYPOINT ["sh", "-c", "pdflatex slide.tex && biber slide && pdflatex slide.tex > /dev/null"]
