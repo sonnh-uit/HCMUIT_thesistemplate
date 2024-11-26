@@ -2,6 +2,6 @@ version: '3'
 services:
   my-thesis:
     container_name: my-thesis-template
-    image: quay.io/sonnh-uit/hcmuit-thesis
+    image: quay.io/sonnh-uit/hcmuit-thesis:dev
     volumes:
-      - ./pdf:/app/result
+      - .:/app
