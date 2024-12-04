@@ -1,8 +1,0 @@
-services:
-  thesis-slide:
-    container_name: slide
-    build:
-      context: .
-      dockerfile: Dockerfile
-    volumes:
-      - .:/app

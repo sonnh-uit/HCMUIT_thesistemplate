@@ -4,3 +4,9 @@ services:
     image: quay.io/sonnh-uit/hcmuit-thesis:dev
     volumes:
       - .:/app
+  slide:
+    build:
+      context: presentation
+      dockerfile: Dockerfile
+    volumes:
+      - ./presentation:/app
