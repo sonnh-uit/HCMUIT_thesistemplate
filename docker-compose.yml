@@ -3,6 +3,7 @@ services:
     container_name: hcmuit-thesis
     image: quay.io/sonnh-uit/hcmuit-thesis
     volumes:
-      - .:/uit-thesis
+      - .:/uit-thesis:rw
+    user: root
     environment:
       - IS_GLOSSARIES=1
