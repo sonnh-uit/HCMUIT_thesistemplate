@@ -17,11 +17,11 @@ RUN apt update && \
     biber \
     texlive-latex-extra \
     texlive-lang-english \
-    texlive-lang-other
-RUN useradd -r -s /usr/sbin/nologin uit-thesis && \
-    mkdir /uit-thesis
+    texlive-lang-other && \
+    useradd -r -s /usr/sbin/nologin uit-thesis && \
+    mkdir /uit-thesis && \
+    chown -R uit-thesis:uit-thesis /uit-thesis
 COPY docker-entrypoint.sh /uit-thesis
-RUN chmod +x /uit-thesis/docker-entrypoint.sh 
 USER uit-thesis
 WORKDIR /uit-thesis
 ENTRYPOINT [ "sh","-c","/uit-thesis/docker-entrypoint.sh $IS_GLOSSARIES" ]
