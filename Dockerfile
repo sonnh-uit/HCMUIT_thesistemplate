@@ -20,7 +20,8 @@ RUN apt update && \
     texlive-lang-other && \
     useradd -r -s /usr/sbin/nologin uit-thesis && \
     mkdir /uit-thesis && \
-    chown -R uit-thesis:uit-thesis /uit-thesis
+    chown -R uit-thesis:uit-thesis /uit-thesis && \
+    chmod 755 /uit-thesis
 COPY docker-entrypoint.sh /uit-thesis
 USER uit-thesis
 WORKDIR /uit-thesis
