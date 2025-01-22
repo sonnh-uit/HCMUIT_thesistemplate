@@ -4,6 +4,7 @@ services:
     image: quay.io/sonnh-uit/hcmuit-thesis:dev
     volumes:
       - .:/uit-thesis:rw
+    user: root
     environment:
       - IS_GLOSSARIES=1
     
