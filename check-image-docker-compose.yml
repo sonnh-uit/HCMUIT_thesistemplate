@@ -1,0 +1,9 @@
+services:
+  check-image:
+    container_name: hcmuit-thesis-check
+    image: quay.io/sonnh-uit/hcmuit-thesis:dev
+    volumes:
+      - .:/uit-thesis
+    environment:
+      - IS_GLOSSARIES=1
+    

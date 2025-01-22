@@ -1,8 +1,10 @@
 services:
-  my-thesis:
-    container_name: dev-thesis-template
+  uit-thesis:
+    container_name: hcmuit-thesis-dev
     build:
       context: .
       dockerfile: Dockerfile
+    environment:
+      - IS_GLOSSARIES=1
     volumes:
-      - .:/app
+      - .:/uit-thesis

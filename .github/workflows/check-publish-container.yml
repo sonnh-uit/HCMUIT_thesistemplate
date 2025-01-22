@@ -1,0 +1,33 @@
+#  author: sonnh
+#  email: sonnh.tech@gmail.com
+#  created: 2024-12-26 21:38:20
+#  updated: 2025-01-22 09:10:29
+#  desc: This is workflow to build pdf by latex and push it in google drive
+
+name: Checking published images
+on:
+    pull_request:
+        branches: ["master"]
+
+jobs:
+  build-thesis:
+    name: Check publish image on dev branch from quay.io is correct
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Run docker-compose to build thesis
+        uses: hoverkraft-tech/compose-action@v2.0.1
+        with:
+            compose-file: "./check-image-docker-compose.yml"
+            services: |
+                check-image
+            up-flags: "--abort-on-container-exit --quiet-pull"
+            
+      - name: Debug folder
+        run: |
+            pwd
+            ls -lah 
+            
