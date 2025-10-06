@@ -17,6 +17,7 @@ RUN apt update && \
     biber \
     texlive-latex-extra \
     texlive-lang-english \
+    texlive-font-utils \
     texlive-lang-other && \
     useradd -r -s /usr/sbin/nologin uit-thesis && \
     mkdir /uit-thesis && \
